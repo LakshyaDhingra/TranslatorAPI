@@ -6,14 +6,14 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template("home.html")
+    return render_template("home2.html")
 
 
-@app.route("/api/v1/<station>/<date>")
-def about(station, date):
-    temperature = 25
-    return {"station": station, "date": date, "temperature": temperature}
+@app.route("/api/v1/<word>")
+def about(word):
+    new_word = word.upper()
+    return {"definition": new_word, "word": word}
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=5001)
