@@ -1,5 +1,4 @@
 from flask import Flask, render_template
-import pandas as pd
 
 app = Flask(__name__)
 
@@ -10,7 +9,7 @@ def home():
 
 
 @app.route("/api/v1/<word>")
-def about(word):
+def api(word):
     new_word = word.upper()
     return {"definition": new_word, "word": word}
 
